@@ -17,7 +17,6 @@ import lombok.Setter;
 public class Address {
     @Id
     private Integer teacher_id;
-    @NotEmpty(message = "street should not be empty")
     @Column(columnDefinition = "VARCHAR(50) NOT NULL ")
     private String street;
     @Column(columnDefinition = "VARCHAR(5) NOT NULL")
