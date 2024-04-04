@@ -45,9 +45,11 @@ public class TeacherController {
         return ResponseEntity.ok(new ApiResponse("teacher removed"));
     }
 
-    @GetMapping("/{teacher_id}")
+    @GetMapping("/get/{teacher_id}")
     public ResponseEntity getTeacherById(@PathVariable Integer teacher_id){
         logger.info(teacher_id + " teacher requested");
         return ResponseEntity.ok(teacherService.getTeacherById(teacher_id));
     }
+
+
 }

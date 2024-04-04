@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -31,5 +33,7 @@ public class Teacher {
     @OneToOne(cascade = CascadeType.REMOVE,mappedBy = "teacher")
     @PrimaryKeyJoinColumn
     private Address address;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy= "teacher")
+    private Set<Course> courses;
 
 }
