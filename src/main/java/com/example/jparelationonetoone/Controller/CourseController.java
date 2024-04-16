@@ -42,4 +42,9 @@ public class CourseController {
         return ResponseEntity.ok(new ApiResponse(courseService.getTeacherNameByCourseId(course_id)));
     }
 
+    @GetMapping("/students/{course_id}")
+    public ResponseEntity getStudentsByCourseId(@PathVariable Integer course_id){
+        return ResponseEntity.ok(courseService.getAllStudentByCourseId(course_id));
+    }
+
 }
